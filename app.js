@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan('dev'));
 
-app.use('/students', students);
-app.use('/tests', tests);
+app.use('/students', students);///first arg specifies sfter which patch we go to students file. If first arg is specified than in routes in GET we don't have to specify, we could just do '/'
+app.use('/tests',tests);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
